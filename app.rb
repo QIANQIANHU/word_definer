@@ -1,14 +1,17 @@
 require('sinatra')
 require('sinatra/reloader')
-# require('pry')
+also_reload('lib/**/*.rb')
+require('./lib/word_definer')
 
-get('/try') do
+get('/') do
   erb(:input)
 end
 
 get('/output') do
-  length = params.fetch("word1")
-  width = params.fetch("word2")
+  @word1 = params.fetch("word1")
+  @word2 = params.fetch("word2")
+  word_definer =
+
   if word1 == word2
     @definition = "word definition1."
   else
