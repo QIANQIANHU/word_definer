@@ -8,14 +8,11 @@ get('/try') do
 end
 
 get('/output') do
-  @word1 = params.fetch("word1")
-  @word2 = params.fetch("word2")
-  word_definer =  WordDefiner.new(@word1, @word2)
+  @word = params.fetch("word")
 
-  if word1_definition?
-    @definition = "word definition1."
-  else
-    @definition = "word definition2."
-  end
+  word_definer =  WordDefiner.new(@word)
+
+  @definition1
+
   erb(:output)
 end
